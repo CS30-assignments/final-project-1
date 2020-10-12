@@ -1,10 +1,33 @@
 <?php
 
+// call file with database connection
+include('connect-db.php');
+
+// write query for all user information
+$sql = "SELECT id, names, email, passwords FROM user_information";
+
+// make the query and get results
+$result = mysqli_query($connect, $sql);
+
+// fetch results as an array
+$user_information = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// free result
+mysqli_free_result($result);
+
+// close connection
+mysqli_close($connect);
+
 // Login Validation
 if (isset($_POST["log-in"])) {
-    if ($_POST['email'] == "example@email.com" && $_POST['password'] == "password") {
-        echo "HEEEELLLLLOOOO";
+    // loop through user_information to check log in and password
+    foreach ($user_information as $user) {
+        if ($_POST['email'] == $user['email'] && $_POST['password'] == $user['passwords']) {
+            // go to about page
+            header('Location: about-us.php');
+        }
     }
+    
 }
 
 ?>
@@ -22,17 +45,19 @@ if (isset($_POST["log-in"])) {
 </head>
 
 <body>
-    <!-- Navgation Bar -->
-    <nav class="navbar bg-light">
-        <div class="nav-item">
-            <h1 class="display-3">Name</h1>
-        </div>
+    <!-- Include Header -->
+    <!-- Main Heading  -->
+    <h1 class="display-3">Name</h1>
 
-        <div class="nav-item">
-            <a href="#" class="btn bg-secondary float-right">Sign Up</a>
-        </div>
+    <!-- Navigation with phone, address, and sign up -->
+    <nav class="bg-light">
+        <ul class="nav justify-content-end">
+            <li class="nav-item px-4">Phone Number: 780-938-9302</li>
+            <li class="nav-item px-4">Address: 4139 CarRET Street</li>
+        </ul>
 
     </nav>
+
 
     <!-- Log In (if have account) -->
     <div class="p-5">
@@ -55,6 +80,12 @@ if (isset($_POST["log-in"])) {
                 <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
             </form>
 
+            <!-- Sign up -->
+            <p class=" pt-5 text-info">
+                Don't have a login?
+                <br>
+                <a class="nav-link" href="sign-up.php">Sign Up</a>
+            </p>
 
         </div>
 

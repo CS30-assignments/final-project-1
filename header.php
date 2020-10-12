@@ -1,4 +1,9 @@
-<?php ?>
+<?php
+
+// start session so site can say name
+
+
+?>
 
 <head>
     <!-- Bootstrap CSS Link -->
@@ -35,12 +40,14 @@
             </li>
 
             <!-- Phone and Address -->
-           <ul class="float-left">
-               <li class="nav-item px-2">Phone Number</li>
-               <li class="nav-item px-2"> Address</li>
-           </ul>
-            <!-- Logout Button -->
+            <ul class="float-left">
+                <li class="nav-item px-2">Phone Number</li>
+                <li class="nav-item px-2"> Address</li>
+            </ul>
+            <!-- Hello PERSON -->
+            <p>
+            </p>
         </ul>
 
-        
+
     </nav>

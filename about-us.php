@@ -17,7 +17,7 @@
     <h1>About us information</h1>
     <ol>
         <li>images</li>
-        <li>moto/vision/words/mission ??</li>
+        <li>motto/vision/words/mission ??</li>
         <li>carousel</li>
         <li>reviews</li>
     </ol>
