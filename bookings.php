@@ -1,4 +1,4 @@
-<?php?>
+<? php ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +14,22 @@
     <?php include('header.php') ?>
 
     <!-- Things to include -->
-    <h2>Booking information</h2>
+    <h2>Booking Information</h2>
 
     <!-- Room Select -->
-    <div class="container">
-        <h3>Rooms</h3>
+    <div class="dropdown container">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Rooms</button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Room 1</a>
+            <a class="dropdown-item" href="#">Room 2</a>
+            <a class="dropdown-item" href="#">Room 3</a>
+        </div>
     </div>
+    </div>
+
+
+
+
     <!-- <ol>
         <li>rooms to select</li>
         <li>button to packages</li>

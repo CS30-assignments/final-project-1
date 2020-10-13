@@ -29,7 +29,7 @@ if (isset($_POST["log-in"])) {
     }
 
     // If incorrect:
-    if ($_POST['email'] != $user['email'] && $_POST['password'] != $user['passwords']) {
+    if ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
         // go to about page
         echo "Sorry, incorrect login. Try again.";
     }
@@ -58,7 +58,7 @@ if (isset($_POST["log-in"])) {
     <nav class="bg-light">
         <ul class="nav justify-content-end">
             <li class="nav-item px-4">Phone Number: 780-938-9302</li>
-            <li class="nav-item px-4">Address: 4139 CarRET Street</li>
+            <li class="nav-item px-4">Address: 1239 Unknown Street</li>
         </ul>
 
     </nav>

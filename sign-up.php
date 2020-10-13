@@ -72,7 +72,7 @@ if (isset($_POST['submit-sign-up'])) {
     <nav class="bg-light">
         <ul class="nav justify-content-end">
             <li class="nav-item px-4">Phone Number: 780-938-9302</li>
-            <li class="nav-item px-4">Address: 1239 CarRET Street</li>
+            <li class="nav-item px-4">Address: 1239 Unknown Street</li>
         </ul>
 
     </nav>

@@ -1,9 +1,4 @@
-<?php
-
-// start session so site can say name
-
-
-?>
+<?php?>
 
 <head>
     <!-- Bootstrap CSS Link -->
