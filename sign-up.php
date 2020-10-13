@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // call file with database connection
 include('connect-db.php');
@@ -7,9 +7,46 @@ include('connect-db.php');
 $user_name = $user_email = $user_password = "";
 
 // Enter sign up info into database
-if(isset($_POST['submit-sign-up'])){
-    echo "HIIIIIIIIIII";
-    echo $_POST['names'] . $_POST['email'];
+if (isset($_POST['submit-sign-up'])) {
+
+    // Check name
+    if (empty($_POST['name'])) {
+        echo "An name is required.";
+    } else {
+        $user_name = $_POST['name'];
+    }
+
+    // Check email
+    if (empty($_POST['email'])) {
+        echo "An email is required.";
+    } else {
+        $user_email = $_POST['email'];
+    }
+
+    // Check password
+    if (empty($_POST['password'])) {
+        echo "An name is required.";
+    } else {
+        $user_password = $_POST['password'];
+    }
+
+    echo $user_name . $user_password . $user_email;
+
+    // Insert sign up info into database
+    // escape the string
+    $user_name = mysqli_real_escape_string($connect, $_POST['name']);
+    $user_email = mysqli_real_escape_string($connect, $_POST['email']);
+    $user_password = mysqli_real_escape_string($connect, $_POST['password']);
+
+    // create sql and insert
+    $sql = "INSERT INTO user_information(names, email, passwords) VALUES ('$user_name', '$user_email', '$user_password')";
+
+    // save to database and them re-direct
+    if (mysqli_query($connect, $sql)) {
+        header('Location: about-us.php');
+    } else {
+        echo "EEERRRRooorrr";
+    }
 }
 
 ?>
@@ -48,13 +85,13 @@ if(isset($_POST['submit-sign-up'])){
             <!-- Name -->
             <p class="pb-3">
                 <label>Name: </label>
-                <input type="text" name="names">
+                <input type="text" name="name" placeholder="Name">
             </p>
 
             <!-- Email -->
             <p class="pb-3">
                 <label>Email: </label>
-                <input type="text" name="email">
+                <input type="text" name="email" placeholder="email@example.com">
             </p>
 
             <!-- Password -->

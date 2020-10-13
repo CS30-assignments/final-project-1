@@ -27,7 +27,12 @@ if (isset($_POST["log-in"])) {
             header('Location: about-us.php');
         }
     }
-    
+
+    // If incorrect:
+    if ($_POST['email'] != $user['email'] && $_POST['password'] != $user['passwords']) {
+        // go to about page
+        echo "Sorry, incorrect login. Try again.";
+    }
 }
 
 ?>

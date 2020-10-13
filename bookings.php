@@ -15,12 +15,17 @@
 
     <!-- Things to include -->
     <h2>Booking information</h2>
-    <ol>
+
+    <!-- Room Select -->
+    <div class="container">
+        <h3>Rooms</h3>
+    </div>
+    <!-- <ol>
         <li>rooms to select</li>
         <li>button to packages</li>
         <li>days to stay</li>
         <li>email</li>
-    </ol>
+    </ol> -->
 </body>
 
 </html>
