@@ -1,4 +1,9 @@
-<?php?>
+<?php
+
+// say hello ------ when user logs in to page
+
+
+?>
 
 <head>
     <!-- Bootstrap CSS Link -->

@@ -1,4 +1,4 @@
-<? php ?>
+<?php ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +16,9 @@
     <!-- Things to include -->
     <h2>Booking Information</h2>
 
+    <!-- What to do-->
     <!-- Room Select -->
-    <div class="dropdown container">
+    <div class="dropdown container pb-5">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Rooms</button>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Room 1</a>
@@ -27,7 +28,23 @@
     </div>
     </div>
 
+    <!-- Number of Days to stay -->
+    <div class="dropdown container pt-5">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Night</button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">1 night</a>
+            <a class="dropdown-item" href="#">2 nights</a>
+            <a class="dropdown-item" href="#">3 nights</a>
+        </div>
+    </div>
+    </div>
 
+    <!-- Selection -->
+    <div class="container">
+        <div class="container border float-right w-25">
+            <h3>Selections: </h3>
+        </div>
+    </div>
 
 
     <!-- <ol>
@@ -36,6 +53,10 @@
         <li>days to stay</li>
         <li>email</li>
     </ol> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
