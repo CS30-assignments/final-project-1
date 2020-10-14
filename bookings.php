@@ -18,7 +18,7 @@
 
     <!-- What to do-->
     <!-- Room Select -->
-    <div class="dropdown container pb-5">
+    <div class="dropdown container p-5">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Rooms</button>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Room 1</a>
@@ -28,9 +28,11 @@
     </div>
     </div>
 
+    <br>
+
     <!-- Number of Days to stay -->
-    <div class="dropdown container pt-5">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Night</button>
+    <div class="dropdown container p-5">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Number of Nights</button>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">1 night</a>
             <a class="dropdown-item" href="#">2 nights</a>
