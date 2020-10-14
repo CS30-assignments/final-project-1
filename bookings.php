@@ -1,4 +1,12 @@
-<?php ?>
+<?php
+
+//check in variable
+
+// Take submitted informtation and put in selections
+if (isset($_POST['submit-bookings'])) { }
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,36 +25,46 @@
     <h2>Booking Information</h2>
 
     <!-- What to do-->
-    <!-- Room Select -->
-    <div class="dropdown container p-5">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Rooms</button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Room 1</a>
-            <a class="dropdown-item" href="#">Room 2</a>
-            <a class="dropdown-item" href="#">Room 3</a>
-        </div>
-    </div>
-    </div>
-
-    <br>
-
-    <!-- Number of Days to stay -->
-    <div class="dropdown container p-5">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Number of Nights</button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">1 night</a>
-            <a class="dropdown-item" href="#">2 nights</a>
-            <a class="dropdown-item" href="#">3 nights</a>
-        </div>
-    </div>
-    </div>
 
     <!-- Selection -->
     <div class="container">
         <div class="container border float-right w-25">
-            <h3>Selections: </h3>
+            <h3>Confirm: </h3>
         </div>
     </div>
+
+    <!-- Check In -->
+    <div class="container p-5">
+        <label>Check In: </label>
+        <input type="date" name="check-in">
+
+        <label>Check Out: </label>
+        <input type="date" name="check-out">
+    </div>
+
+
+
+
+    <!-- Room Select -->
+    <form method="POST" class="container p-5">
+        <label>Choose a Room</label>
+        <select name="rooms">
+            <option value="room-1">Room-1</option>
+            <option value="room-2">Room-2</option>
+            <option value="room-3">Room-3</option>
+            <option value="room-4">Room-4</option>
+        </select>
+    </form>
+
+
+    <br>
+
+
+
+    <!-- Submit -->
+    <form method="POST" class="container">
+        <input type="submit" name="submit-bookings" value="Submit">
+    </form>
 
 
     <!-- <ol>
@@ -56,6 +74,7 @@
         <li>email</li>
     </ol> -->
 
+    <!-- Popper and jQuery files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 

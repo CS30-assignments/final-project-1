@@ -13,6 +13,8 @@
     <!-- Include Header -->
     <?php include('header.php') ?>
 
+    <!-- Carousel Images -->
+
     <!-- Detals -->
     <h1>About us information</h1>
     <ol>
@@ -21,7 +23,7 @@
         <li>carousel</li>
         <li>reviews</li>
     </ol>
-    
+
 </body>
 
 </html>
