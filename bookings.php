@@ -1,10 +1,17 @@
 <?php
 
-//check in variable
+// selection variables set to empty
+$room_select = $check_in = $check_out = '';
 
 // Take submitted informtation and put in selections
-if (isset($_POST['submit-bookings'])) { }
+if (isset($_POST['submit-bookings'])) {
+    // assign variables the data user selects
+    $room_select = $_POST['room-select'];
+    $check_in = $_POST['check-in'];
+    $check_out = $_POST['check-out'];
+}
 
+// post everything to submit to database
 
 ?>
 
@@ -29,42 +36,53 @@ if (isset($_POST['submit-bookings'])) { }
     <!-- Selection -->
     <div class="container">
         <div class="container border float-right w-25">
-            <h3>Confirm: </h3>
+            <h3>Confirmation:</h3>
+            <p>
+                Check In: <span><?php echo $check_in; ?></span>
+            </p>
+
+            <p>
+                Check Out: <span><?php echo $check_out; ?></span>
+            </p>
+
+            <p>
+                Room Select: <span><?php echo $room_select; ?></span>
+            </p>
         </div>
     </div>
 
-    <!-- Check In -->
-    <div class="container p-5">
-        <label>Check In: </label>
-        <input type="date" name="check-in">
+    <form method="POST">
 
-        <label>Check Out: </label>
-        <input type="date" name="check-out">
-    </div>
+        <!-- Check In -->
+        <div class="container p-5">
+            <label>Check In: </label>
+            <input type="date" name="check-in">
+
+            <label>Check Out: </label>
+            <input type="date" name="check-out">
+        </div>
 
 
+        <!-- Room Select -->
+        <div class="container p-5">
+            <label>Choose a Room</label>
+            <select name="room-select">
+                <option value="Room-1">Room-1</option>
+                <option value="Room-2">Room-2</option>
+                <option value="Room-3">Room-3</option>
+                <option value="Room-4">Room-4</option>
+            </select>
+        </div>
 
+        <br>
+        <div class="container p-5">
+            <input type="submit" class="btn btn-danger" name="submit-bookings" value="Submit">
+        </div>
 
-    <!-- Room Select -->
-    <form method="POST" class="container p-5">
-        <label>Choose a Room</label>
-        <select name="rooms">
-            <option value="room-1">Room-1</option>
-            <option value="room-2">Room-2</option>
-            <option value="room-3">Room-3</option>
-            <option value="room-4">Room-4</option>
-        </select>
     </form>
 
 
     <br>
-
-
-
-    <!-- Submit -->
-    <form method="POST" class="container">
-        <input type="submit" name="submit-bookings" value="Submit">
-    </form>
 
 
     <!-- <ol>
@@ -75,8 +93,8 @@ if (isset($_POST['submit-bookings'])) { }
     </ol> -->
 
     <!-- Popper and jQuery files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
 </body>
 
