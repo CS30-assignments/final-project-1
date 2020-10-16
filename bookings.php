@@ -1,14 +1,17 @@
 <?php
 
 // selection variables set to empty
-$room_select = $check_in = $check_out = '';
+$room_select = $check_in = $check_out = $thankyou = '';
 
 // Take submitted informtation and put in selections
 if (isset($_POST['submit-bookings'])) {
     // assign variables the data user selects
-    $room_select = $_POST['room-select'];
-    $check_in = $_POST['check-in'];
-    $check_out = $_POST['check-out'];
+    $room_select = "Room Select: " .  $_POST['room-select'];
+    $check_in = " Check In: " . $_POST['check-in'];
+    $check_out = "Check Out: " . $_POST['check-out'];
+
+    // thank the user
+    $thankyou = "Thank You for booking with us!";
 }
 
 // post everything to submit to database
@@ -35,18 +38,18 @@ if (isset($_POST['submit-bookings'])) {
 
     <!-- Selection -->
     <div class="container">
-        <div class="container border float-right w-25">
-            <h3>Confirmation:</h3>
+        <div class="container  float-right w-25">
+            <h3>Booked:</h3>
             <p>
-                Check In: <span><?php echo $check_in; ?></span>
-            </p>
+                <?php echo $check_in; ?>
 
-            <p>
-                Check Out: <span><?php echo $check_out; ?></span>
-            </p>
+                <br>
 
-            <p>
-                Room Select: <span><?php echo $room_select; ?></span>
+                <?php echo $check_out; ?>
+           
+                <br>
+
+                <?php echo $room_select; ?>
             </p>
         </div>
     </div>
@@ -78,6 +81,10 @@ if (isset($_POST['submit-bookings'])) {
         <div class="container p-5">
             <input type="submit" class="btn btn-danger" name="submit-bookings" value="Submit">
         </div>
+
+        <p>
+            <?php echo $thankyou;?>
+        </p>
 
     </form>
 
