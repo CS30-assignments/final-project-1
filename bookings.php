@@ -1,20 +1,68 @@
 <?php
 
+// call file with database connection
+include('connect-db.php');
+
 // selection variables set to empty
-$room_select = $check_in = $check_out = $thankyou = '';
+$room_select = $check_in = $check_out = $email_confirm =  '';
+
+// errors
+$errors = array('check-in' => '', 'check-out' => '', 'room-select' => '', 'email-confirm' => '');
 
 // Take submitted informtation and put in selections
 if (isset($_POST['submit-bookings'])) {
-    // assign variables the data user selects
-    $room_select = "Room Select: " .  $_POST['room-select'];
-    $check_in = " Check In: " . $_POST['check-in'];
-    $check_out = "Check Out: " . $_POST['check-out'];
 
-    // thank the user
-    $thankyou = "Thank You for booking with us!";
+    // Check if check-in is empty
+    if (empty($_POST['check-in'])) {
+        $errors['check-in'] = 'An check in date is required <br />';
+    } else {
+        $check_in = $_POST['check-in'];
+    }
+
+    // Check if check-out is empty
+    if (empty($_POST['check-out'])) {
+        $errors['check-out'] = 'An check out date is required <br />';
+    } else {
+        $check_out = $_POST['check-out'];
+    }
+
+    // Check if email confirmation is empty
+    if (empty($_POST['email-confirm'])) {
+        $errors['email-confirm'] = 'An email is required <br />';
+    } else {
+        $email_confirm = $_POST['email-confirm'];
+    }
+
+    // // Check if check-in is empty
+    // if ($_POST['room-select'] = "") {
+    //     $errors['room-select'] = 'An room selection is required <br />';
+    // } else {
+    //     $room_select = $_POST['room-select'];
+    // }
+
+
+    // Check for errors
+    if (array_filter($errors)) {
+        echo "WE have a problem";
+    } else {
+
+        $check_in = mysqli_real_escape_string($connect, $_POST['check-in']);
+        $check_out = mysqli_real_escape_string($connect, $_POST['check-out']);
+        $room_select = mysqli_real_escape_string($connect, $_POST['room-select']);
+        $email_confirm = mysqli_real_escape_string($connect, $_POST['email-confirm']);
+
+        // create sql
+        $sql = "INSERT INTO bookings_information(email_confirm, check_in, check_out, room_type) VALUES ('$email_confirm', '$check_in','$check_out','$room_select')";
+
+        // save to database and then check
+        if (mysqli_query($connect, $sql)) {
+            header('Location: bookings.php');
+        } else {
+            echo 'query errrrooorr';
+        }
+    }
 }
 
-// post everything to submit to database
 
 ?>
 
@@ -40,17 +88,9 @@ if (isset($_POST['submit-bookings'])) {
     <div class="container">
         <div class="container  float-right w-25">
             <h3>Booked:</h3>
-            <p>
-                <?php echo $check_in; ?>
-
-                <br>
-
-                <?php echo $check_out; ?>
-           
-                <br>
-
+            <div>
                 <?php echo $room_select; ?>
-            </p>
+            </div>
         </div>
     </div>
 
@@ -77,27 +117,19 @@ if (isset($_POST['submit-bookings'])) {
             </select>
         </div>
 
+        <div class="p-5">
+            Email Confirmation: <input type="text" name="email-confirm">
+        </div>
+
         <br>
         <div class="container p-5">
             <input type="submit" class="btn btn-danger" name="submit-bookings" value="Submit">
         </div>
 
-        <p>
-            <?php echo $thankyou;?>
-        </p>
-
     </form>
 
 
     <br>
-
-
-    <!-- <ol>
-        <li>rooms to select</li>
-        <li>button to packages</li>
-        <li>days to stay</li>
-        <li>email</li>
-    </ol> -->
 
     <!-- Popper and jQuery files -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
