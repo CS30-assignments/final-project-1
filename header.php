@@ -1,7 +1,14 @@
 <?php
 
 // say hello ------ when user logs in to page
+session_start();
 
+// log out of user sessions
+if (isset($_POST["log-out"])) {
+    session_unset();
+} else {
+    $name = $_SESSION['name'];
+}
 
 ?>
 
@@ -43,10 +50,13 @@
             <ul class="float-left">
                 <li class="nav-item px-2">Phone Number</li>
                 <li class="nav-item px-2"> Address</li>
+                <li>Hello <?php echo htmlspecialchars($name) ?></li>
             </ul>
-            <!-- Hello PERSON -->
-            <p>
-            </p>
+
+            <form action="index.php" method="POST">
+                <input class="btn btn-success" type="submit" name="log-out" value="Log Out">
+            </form>
+
         </ul>
 
 

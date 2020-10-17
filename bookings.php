@@ -3,6 +3,28 @@
 // call file with database connection
 include('connect-db.php');
 
+
+
+// check if email from current session matches booking info
+
+
+// query emails from both tables
+$sql_booking = "SELECT email_confirm, check_in, check_out, room_type FROM bookings_information WHERE email_confirm = ";
+
+
+// make the query and get results
+$result = mysqli_query($connect, $sql_booking);
+
+// fetch results as an array
+$userEmail = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// free result
+mysqli_free_result($result);
+
+// close connection
+mysqli_close($connect);
+
+
 // selection variables set to empty
 $room_select = $check_in = $check_out = $email_confirm =  '';
 
@@ -63,7 +85,6 @@ if (isset($_POST['submit-bookings'])) {
     }
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +100,7 @@ if (isset($_POST['submit-bookings'])) {
     <!-- Header -->
     <?php include('header.php') ?>
 
+    <?php ?>
     <!-- Things to include -->
     <h2>Booking Information</h2>
 
@@ -89,7 +111,17 @@ if (isset($_POST['submit-bookings'])) {
         <div class="container  float-right w-25">
             <h3>Booked:</h3>
             <div>
-                <?php echo $room_select; ?>
+                <?php
+                    // Display previous booking information
+                    foreach ($userEmail as $email) {
+                        echo $email['email_confirm'] . '</br >';
+                        echo $email['check_in'] .  '</br >';
+                        echo $email['check_out'] . '</br >';
+                        echo  $email['room_type'] . '</br >';
+                    }
+                ?>
+
+
             </div>
         </div>
     </div>
@@ -117,7 +149,7 @@ if (isset($_POST['submit-bookings'])) {
             </select>
         </div>
 
-        <div class="p-5">
+        <div class="container p-5">
             Email Confirmation: <input type="text" name="email-confirm">
         </div>
 

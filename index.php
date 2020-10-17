@@ -24,6 +24,11 @@ if (isset($_POST["log-in"])) {
     foreach ($user_information as $user) {
         if ($_POST['email'] == $user['email'] && $_POST['password'] == $user['passwords']) {
             // go to about page
+            // start the session
+            session_start();
+            $_SESSION['name'] = $user['names'];
+            $_SESSION['email'] = $user['email'];
+
             header('Location: about-us.php');
         }
     }

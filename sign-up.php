@@ -43,6 +43,8 @@ if (isset($_POST['submit-sign-up'])) {
 
     // save to database and them re-direct
     if (mysqli_query($connect, $sql)) {
+        session_start();
+        $_SESSION['name'] = $_POST['name'];
         header('Location: about-us.php');
     } else {
         echo "EEERRRRooorrr";
