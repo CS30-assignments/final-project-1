@@ -8,6 +8,7 @@ if (isset($_POST["log-out"])) {
     session_unset();
 } else {
     $name = $_SESSION['name'];
+    $email = $_SESSION['email'];
 }
 
 ?>
@@ -53,7 +54,7 @@ if (isset($_POST["log-out"])) {
                 <li>Hello <?php echo htmlspecialchars($name) ?></li>
             </ul>
 
-            <form action="index.php" method="POST">
+            <form action = "index.php" method="POST">
                 <input class="btn btn-success" type="submit" name="log-out" value="Log Out">
             </form>
 

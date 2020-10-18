@@ -5,31 +5,16 @@ include('connect-db.php');
 
 
 
-// check if email from current session matches booking info
 
+// COMPARE
 
-// query emails from both tables
-$sql_booking = "SELECT email_confirm, check_in, check_out, room_type FROM bookings_information WHERE email_confirm = ";
-
-
-// make the query and get results
-$result = mysqli_query($connect, $sql_booking);
-
-// fetch results as an array
-$userEmail = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-// free result
-mysqli_free_result($result);
-
-// close connection
-mysqli_close($connect);
 
 
 // selection variables set to empty
-$room_select = $check_in = $check_out = $email_confirm =  '';
+$room_type = $check_in = $check_out = $email_confirm =  '';
 
 // errors
-$errors = array('check-in' => '', 'check-out' => '', 'room-select' => '', 'email-confirm' => '');
+$errors = array('check-in' => '', 'check-out' => '', 'room-type' => '', 'email-confirm' => '');
 
 // Take submitted informtation and put in selections
 if (isset($_POST['submit-bookings'])) {
@@ -70,11 +55,11 @@ if (isset($_POST['submit-bookings'])) {
 
         $check_in = mysqli_real_escape_string($connect, $_POST['check-in']);
         $check_out = mysqli_real_escape_string($connect, $_POST['check-out']);
-        $room_select = mysqli_real_escape_string($connect, $_POST['room-select']);
+        $room_type = mysqli_real_escape_string($connect, $_POST['room-type']);
         $email_confirm = mysqli_real_escape_string($connect, $_POST['email-confirm']);
 
         // create sql
-        $sql = "INSERT INTO bookings_information(email_confirm, check_in, check_out, room_type) VALUES ('$email_confirm', '$check_in','$check_out','$room_select')";
+        $sql = "INSERT INTO bookings_information(email_confirm, check_in, check_out, room_type) VALUES ('$email_confirm', '$check_in','$check_out','$room_type')";
 
         // save to database and then check
         if (mysqli_query($connect, $sql)) {
@@ -84,6 +69,33 @@ if (isset($_POST['submit-bookings'])) {
         }
     }
 }
+
+
+
+
+
+// query emails from both tables
+$sql_booking = "SELECT email_confirm, check_in, check_out, room_type FROM bookings_information";
+// -- WHERE email_confirm = $user
+
+
+// make the query and get results
+$result = mysqli_query($connect, $sql_booking);
+
+// fetch results as an array
+$userBook = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// free result
+mysqli_free_result($result);
+
+// close connection
+mysqli_close($connect);
+
+
+
+
+
+
 
 ?>
 
@@ -110,17 +122,15 @@ if (isset($_POST['submit-bookings'])) {
     <div class="container">
         <div class="container  float-right w-25">
             <h3>Booked:</h3>
-            <div>
-                <?php
-                    // Display previous booking information
-                    foreach ($userEmail as $email) {
-                        echo $email['email_confirm'] . '</br >';
-                        echo $email['check_in'] .  '</br >';
-                        echo $email['check_out'] . '</br >';
-                        echo  $email['room_type'] . '</br >';
+            <div class="container border">
+                <?php foreach ($userBook as $book) {
+                    if ($email == $book['email_confirm']) {
+                        echo $book['check_in'] . '</br >';
+                        echo $book['check_out'] . '</br >';
+                        echo $book['room_type'] . '</br >';
                     }
-                ?>
-
+                } ?>
+               
 
             </div>
         </div>
@@ -141,7 +151,7 @@ if (isset($_POST['submit-bookings'])) {
         <!-- Room Select -->
         <div class="container p-5">
             <label>Choose a Room</label>
-            <select name="room-select">
+            <select name="room-type">
                 <option value="Room-1">Room-1</option>
                 <option value="Room-2">Room-2</option>
                 <option value="Room-3">Room-3</option>
