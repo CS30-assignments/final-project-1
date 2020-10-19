@@ -51,11 +51,12 @@ if (isset($_POST["log-out"])) {
             <ul class="float-left">
                 <li class="nav-item px-2">Phone Number</li>
                 <li class="nav-item px-2"> Address</li>
-                <li>Hello <?php echo htmlspecialchars($name) ?></li>
             </ul>
 
-            <form action = "index.php" method="POST">
-                <input class="btn btn-success" type="submit" name="log-out" value="Log Out">
+            <li class="text-success px-3">Hello <?php echo htmlspecialchars($name) ?></li>
+
+            <form action="index.php" method="POST" class="px-3">
+                <input class="btn btn-warning" type="submit" name="log-out" value="Log Out">
             </form>
 
         </ul>

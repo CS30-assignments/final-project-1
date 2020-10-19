@@ -4,12 +4,6 @@
 include('connect-db.php');
 
 
-
-
-// COMPARE
-
-
-
 // selection variables set to empty
 $room_type = $check_in = $check_out = $email_confirm =  '';
 
@@ -70,10 +64,6 @@ if (isset($_POST['submit-bookings'])) {
     }
 }
 
-
-
-
-
 // query emails from both tables
 $sql_booking = "SELECT email_confirm, check_in, check_out, room_type FROM bookings_information";
 // -- WHERE email_confirm = $user
@@ -90,9 +80,6 @@ mysqli_free_result($result);
 
 // close connection
 mysqli_close($connect);
-
-
-
 
 
 
@@ -122,15 +109,25 @@ mysqli_close($connect);
     <div class="container">
         <div class="container  float-right w-25">
             <h3>Booked:</h3>
-            <div class="container border">
-                <?php foreach ($userBook as $book) {
-                    if ($email == $book['email_confirm']) {
-                        echo $book['check_in'] . '</br >';
-                        echo $book['check_out'] . '</br >';
-                        echo $book['room_type'] . '</br >';
-                    }
-                } ?>
-               
+            <div class="container">
+                <?php foreach ($userBook as $book) { ?>
+                    <?php if ($email == $book['email_confirm']) { ?>
+                        <div class="container border">
+                            <?php
+                            echo $book['check_in'] . '</br >';
+                            echo $book['check_out'] . '</br >';
+                            echo $book['room_type'] . '</br >';
+                            ?>
+
+                            <form class="btn-sm" action="#" method="POST">
+                                <input class="btn btn-danger" type="submit" name="delete-booking" value="Delete">
+                            </form>
+                        </div>
+
+                    <?php } ?>
+
+                <?php } ?>
+
 
             </div>
         </div>
@@ -165,7 +162,7 @@ mysqli_close($connect);
 
         <br>
         <div class="container p-5">
-            <input type="submit" class="btn btn-danger" name="submit-bookings" value="Submit">
+            <input type="submit" class="btn btn-success" name="submit-bookings" value="Submit">
         </div>
 
     </form>
