@@ -47,13 +47,7 @@ if (isset($_POST["log-out"])) {
                 <a class="nav-link" href="explore.php">Explore</a>
             </li>
 
-            <!-- Phone and Address -->
-            <ul class="float-left">
-                <li class="nav-item px-2">Phone Number</li>
-                <li class="nav-item px-2"> Address</li>
-            </ul>
-
-            <li class="text-success px-3">Hello <?php echo htmlspecialchars($name) ?></li>
+            <li class="text-success p-2">Hello <?php echo htmlspecialchars($name) ?></li>
 
             <form action="index.php" method="POST" class="px-3">
                 <input class="btn btn-warning" type="submit" name="log-out" value="Log Out">

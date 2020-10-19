@@ -2,6 +2,8 @@
 
 // call file with database connection
 include('connect-db.php');
+// initialize login variable
+$loginError = " ";
 
 // write query for all user information
 $sql = "SELECT id, names, email, passwords FROM user_information";
@@ -34,9 +36,10 @@ if (isset($_POST["log-in"])) {
     }
 
     // If incorrect:
+    
     if ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
         // go to about page
-        echo "Sorry, incorrect login. Try again.";
+        $loginError =  "Sorry, incorrect login. Try again.";
     }
 }
 
@@ -88,10 +91,14 @@ if (isset($_POST["log-in"])) {
 
                 <!-- Submit Login -->
                 <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
-            </form>
 
+                <!-- Error in the Login -->
+                <p class="pt-2 text-danger"><?php echo $loginError?></p>
+            </form>
+                
+            
             <!-- Sign up -->
-            <p class=" pt-5 text-info">
+            <p class="pt-3 text-info">
                 Don't have a login?
                 <br>
                 <a class="nav-link" href="sign-up.php">Sign Up</a>

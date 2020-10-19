@@ -20,9 +20,9 @@
         <h3 class="bg-info w-25 text-center">Package 1</h3>
         <p>Image for package 1</p>
         <div>
-            <img src="images/package-1/room.jpg" alt="package-room" width="400px" height="250px">
-            <img src="images/package-1/view.jpg" alt="package-view" width="400px" height="250px">
-            <img src="images/package-1/movie.jpg" alt="package-movie" width="400px" height="250px">
+            <img src="images/package-1/room.jpg" alt="package-room" width="350" height="250px">
+            <img src="images/package-1/view.jpg" alt="package-view" width="350px" height="250px">
+            <img src="images/package-1/movie.jpg" alt="package-movie" width="350px" height="250px">
         </div>
         <p>This is the information for package 1</p>
     </div>
@@ -32,10 +32,10 @@
         <h3 class="bg-info w-25 text-center">Package 2</h3>
         <p>Image for package 2</p>
         <div>
-            <img src="images/package-2/room.jpg" alt="package2-room" width="330px" height="250px">
-            <img src="images/package-2/movie.jpg" alt="package2-movie" width="330px" height="250px">
-            <img src="images/package-2/spa.jpg" alt="package2-spa" width="300px" height="250px">
-            <img src="images/package-2/rest-of-room.jpg" alt="package2-room-rest" width="350px" height="250px">
+            <img src="images/package-2/room.jpg" alt="package2-room" width="290px" height="250px">
+            <img src="images/package-2/movie.jpg" alt="package2-movie" width="290px" height="250px">
+            <img src="images/package-2/spa.jpg" alt="package2-spa" width="290px" height="250px">
+            <img src="images/package-2/rest-of-room.jpg" alt="package2-room-rest" width="280px" height="250px">
         </div>
         <p>This is the information for package 2</p>
     </div>
