@@ -97,13 +97,15 @@ if (isset($_POST['submit-sign-up'])) {
             </p>
 
             <!-- Password -->
-            <p class="pb-3">
+            <p>
                 <label>Password: </label>
-                <input type="text" name="password">
+                <input type="password" name="password">
             </p>
 
             <!-- Submit Sign Up -->
-            <input type="submit" name="submit-sign-up">
+            <p class="p-3">
+                <input type="submit" name="submit-sign-up">
+            </p>
 
         </form>
     </div>

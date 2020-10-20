@@ -12,7 +12,6 @@ $errors = array('check-in' => '', 'check-out' => '', 'room-type' => '', 'email-c
 
 // Take submitted informtation and put in selections
 if (isset($_POST['submit-bookings'])) {
-
     // Check if check-in is empty
     if (empty($_POST['check-in'])) {
         $errors['check-in'] = 'An check in date is required <br />';
@@ -34,18 +33,16 @@ if (isset($_POST['submit-bookings'])) {
         $email_confirm = $_POST['email-confirm'];
     }
 
-    // // Check if check-in is empty
-    // if ($_POST['room-select'] = "") {
-    //     $errors['room-select'] = 'An room selection is required <br />';
-    // } else {
-    //     $room_select = $_POST['room-select'];
-    // }
-
 
     // Check for errors
     if (array_filter($errors)) {
         echo "WE have a problem";
     } else {
+
+        // escapeString($check_in, $connect, 'check-in');
+        // escapeString($check_out, $connect, 'check-out');
+        // escapeString($room_type, $connect, 'room-type');
+        // escapeString($email_confirm, $connect, 'email-confirm');
 
         $check_in = mysqli_real_escape_string($connect, $_POST['check-in']);
         $check_out = mysqli_real_escape_string($connect, $_POST['check-out']);
@@ -64,9 +61,27 @@ if (isset($_POST['submit-bookings'])) {
     }
 }
 
+// Delete booking from user
+if (isset($_POST['delete-booking'])) {
+    echo "DELETING TIMMMEE!!!!!!";
+    // Delete row of info
+    $delete_id = mysqli_real_escape_string($connect, $_POST['delete_id']);
+
+    $sql = "DELETE FROM bookings_information WHERE id = $delete_id";
+
+    // make and check if query is succesful
+    if (mysqli_query($connect, $sql)) {
+        // success
+        echo "WE HAVE DELETED";
+    } else {
+        // failure
+        echo 'query error: ' . mysqli_error($connect);
+    }
+}
+
+
 // query emails from both tables
-$sql_booking = "SELECT email_confirm, check_in, check_out, room_type FROM bookings_information";
-// -- WHERE email_confirm = $user
+$sql_booking = "SELECT id, email_confirm, check_in, check_out, room_type FROM bookings_information";
 
 
 // make the query and get results
@@ -81,6 +96,8 @@ mysqli_free_result($result);
 // close connection
 mysqli_close($connect);
 
+
+// FUNCTION FOR writing messages!!!!!!!!!!!!!!!!! TRY IT OUT
 
 
 
@@ -114,12 +131,13 @@ mysqli_close($connect);
                     <?php if ($email == $book['email_confirm']) { ?>
                         <div class="container border">
                             <?php
-                            echo $book['check_in'] . '</br >';
-                            echo $book['check_out'] . '</br >';
-                            echo $book['room_type'] . '</br >';
-                            ?>
+                                    echo $book['check_in'] . '</br >';
+                                    echo $book['check_out'] . '</br >';
+                                    echo $book['room_type'] . '</br >';
+                                    ?>
 
                             <form class="btn-sm" action="#" method="POST">
+                                <input type="hidden" name="delete_id" value="<?php echo $book['id']; ?>">
                                 <input class="btn btn-danger" type="submit" name="delete-booking" value="Delete">
                             </form>
                         </div>

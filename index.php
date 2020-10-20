@@ -39,7 +39,7 @@ if (isset($_POST["log-in"])) {
     
     if ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
         // go to about page
-        $loginError =  "Sorry, incorrect login. Try again.";
+        $loginError =  "Sorry, incorrect login. Try again. Email and password are case sensitive";
     }
 }
 
@@ -87,7 +87,7 @@ if (isset($_POST["log-in"])) {
 
                 <label>Password:</label>
                 <!-- Enter in value  -->
-                <input type="text" name="password">
+                <input type="password" name="password">
 
                 <!-- Submit Login -->
                 <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
