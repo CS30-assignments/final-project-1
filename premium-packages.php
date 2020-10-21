@@ -20,9 +20,10 @@
         <h3 class="bg-info w-25 text-center">Package 1</h3>
         <p>Image for package 1</p>
         <div>
-            <img src="images/package-1/room.jpg" alt="package-room" width="350" height="250px">
-            <img src="images/package-1/view.jpg" alt="package-view" width="350px" height="250px">
-            <img src="images/package-1/movie.jpg" alt="package-movie" width="350px" height="250px">
+            <img src="images/package-1/room.jpg" alt="package-room" width="290px" height="250px">
+            <img src="images/package-1/view.jpg" alt="package-view" width="290px" height="250px">
+            <img src="images/package-1/movie.jpg" alt="package-movie" width="290px" height="250px">
+            <img src="images/package-1/service.webp" alt="package-service" width="290px" height="250px">
         </div>
         <p>This is the information for package 1</p>
     </div>
@@ -45,14 +46,17 @@
         <h3 class="bg-info w-25 text-center">Package 3</h3>
         <p>Image for package 3</p>
         <div>
-            <img src="" alt="">
+            <img src="images/package-3/room-1.jpg" alt="package3-room" width="290px" height="250px">
+            <img src="images/package-3/dining.jpg" alt="package3-dining" width="290px" height="250px">
+            <img src="images/package-3/spa.png" alt="package3-spa" width="290px" height="250px">
+            <img src="images/package-3/movies.jpg" alt="package3-movies" width="290px" height="250px">
 
         </div>
         <p>This is the information for package 3</p>
     </div>
 
     <!-- Info about premium packages-->
-    <h2>Premium Packages:</h2>
+    <!-- <h2>Premium Packages:</h2>
     <ol>
         <li>images</li>
         <li>packages</li>
@@ -60,7 +64,7 @@
         <li>link to bookings</li>
 
 
-    </ol>
+    </ol> -->
 
     <!-- Popper and jQuery files -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

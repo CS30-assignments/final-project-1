@@ -36,7 +36,6 @@ if (isset($_POST["log-in"])) {
     }
 
     // If incorrect:
-    
     if ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
         // go to about page
         $loginError =  "Sorry, incorrect login. Try again. Email and password are case sensitive";
@@ -73,40 +72,47 @@ if (isset($_POST["log-in"])) {
 
 
     <!-- Log In (if have account) -->
-    <div class="p-5">
-        <div class="container bg-light py-4 w-25 float-left">
-            <!-- Log in Heading -->
-            <h3 class="display 4">Log In</h3>
+    <div class="row">
+        <div class="p-5 col">
+            <div class="container bg-light py-4 w-25 float-left">
+                <!-- Log in Heading -->
+                <h3 class="display 4">Log In</h3>
 
-            <form method="post" class="pt-2">
-                <label>Email:</label>
-                <!-- Enter in value  -->
-                <input type="text" name="email">
+                <form method="post" class="pt-2">
+                    <label>Email:</label>
+                    <!-- Enter in value  -->
+                    <input type="text" name="email">
 
-                <br>
+                    <br>
 
-                <label>Password:</label>
-                <!-- Enter in value  -->
-                <input type="password" name="password">
+                    <label>Password:</label>
+                    <!-- Enter in value  -->
+                    <input type="password" name="password">
 
-                <!-- Submit Login -->
-                <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
+                    <!-- Submit Login -->
+                    <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
 
-                <!-- Error in the Login -->
-                <p class="pt-2 text-danger"><?php echo $loginError?></p>
-            </form>
-                
-            
-            <!-- Sign up -->
-            <p class="pt-3 text-info">
-                Don't have a login?
-                <br>
-                <a class="nav-link" href="sign-up.php">Sign Up</a>
-            </p>
+                    <!-- Error in the Login -->
+                    <p class="pt-2 text-danger"><?php echo $loginError ?></p>
+                </form>
+
+
+                <!-- Sign up -->
+                <p class="pt-3 text-info">
+                    Don't have a login?
+                    <br>
+                    <a class="nav-link" href="sign-up.php">Sign Up</a>
+                </p>
+
+            </div>
 
         </div>
 
+        <div class="col">
+            <img src="images/" alt="">
+        </div>
     </div>
+
 
 </body>
 
