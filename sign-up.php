@@ -62,6 +62,7 @@ if (isset($_POST['submit-sign-up'])) {
     <title>Sign-Up</title>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -71,10 +72,10 @@ if (isset($_POST['submit-sign-up'])) {
     <h1 class="display-3">Name</h1>
 
     <!-- Navigation with phone, address, and sign up -->
-    <nav class="bg-light">
+    <nav class="p-3">
         <ul class="nav justify-content-end">
-            <li class="nav-item px-4">Phone Number: 780-938-9302</li>
-            <li class="nav-item px-4">Address: 1239 Unknown Street</li>
+            <li class="text-light nav-item px-4">Phone Number: 780-938-9302</li>
+            <li class="text-light nav-item px-4">Address: 1239 Unknown Street</li>
         </ul>
 
     </nav>
@@ -99,11 +100,11 @@ if (isset($_POST['submit-sign-up'])) {
             <!-- Password -->
             <p>
                 <label>Password: </label>
-                <input type="password" name="password">
+                <input type="password" name="password" placeholder="--------">
             </p>
 
             <!-- Submit Sign Up -->
-            <p class="p-3">
+            <p class="p-2">
                 <input type="submit" name="submit-sign-up">
             </p>
 

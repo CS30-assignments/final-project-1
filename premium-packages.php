@@ -17,25 +17,25 @@
     <!-- List of Packages -->
     <!-- Package 1 -->
     <div class="p-5">
-        <h3 class="bg-info w-25 text-center">Package 1</h3>
+        <h3 class="w-25 text-dark">Package 1</h3>
         <p>Image for package 1</p>
         <div>
-            <img src="images/package-1/room.jpg" alt="package-room" width="290px" height="250px">
-            <img src="images/package-1/view.jpg" alt="package-view" width="290px" height="250px">
-            <img src="images/package-1/movie.jpg" alt="package-movie" width="290px" height="250px">
-            <img src="images/package-1/service.webp" alt="package-service" width="290px" height="250px">
+            <img src="images/package-1/room.jpg" alt="package-room" width="280px" height="250px">
+            <img src="images/package-1/view.jpg" alt="package-view" width="280px" height="250px">
+            <img src="images/package-1/movie.jpg" alt="package-movie" width="280px" height="250px">
+            <img src="images/package-1/service.webp" alt="package-service" width="280px" height="250px">
         </div>
         <p>This is the information for package 1</p>
     </div>
 
     <!-- Package 2 -->
     <div class="p-5">
-        <h3 class="bg-info w-25 text-center">Package 2</h3>
+        <h3 class="w-25 text-dark">Package 2</h3>
         <p>Image for package 2</p>
         <div>
-            <img src="images/package-2/room.jpg" alt="package2-room" width="290px" height="250px">
-            <img src="images/package-2/movie.jpg" alt="package2-movie" width="290px" height="250px">
-            <img src="images/package-2/spa.jpg" alt="package2-spa" width="290px" height="250px">
+            <img src="images/package-2/room.jpg" alt="package2-room" width="280px" height="250px">
+            <img src="images/package-2/movie.jpg" alt="package2-movie" width="280px" height="250px">
+            <img src="images/package-2/spa.jpg" alt="package2-spa" width="280px" height="250px">
             <img src="images/package-2/rest-of-room.jpg" alt="package2-room-rest" width="280px" height="250px">
         </div>
         <p>This is the information for package 2</p>
@@ -43,13 +43,13 @@
 
     <!-- Package 3 -->
     <div class="p-5">
-        <h3 class="bg-info w-25 text-center">Package 3</h3>
+        <h3 class="w-25 text-dark">Package 3</h3>
         <p>Image for package 3</p>
         <div>
-            <img src="images/package-3/room-1.jpg" alt="package3-room" width="290px" height="250px">
-            <img src="images/package-3/dining.jpg" alt="package3-dining" width="290px" height="250px">
-            <img src="images/package-3/spa.png" alt="package3-spa" width="290px" height="250px">
-            <img src="images/package-3/movies.jpg" alt="package3-movies" width="290px" height="250px">
+            <img src="images/package-3/room-1.jpg" alt="package3-room" width="275px" height="250px">
+            <img src="images/package-3/dining.jpg" alt="package3-dining" width="275px" height="250px">
+            <img src="images/package-3/spa.png" alt="package3-spa" width="275" height="250px">
+            <img src="images/package-3/movies.jpg" alt="package3-movies" width="275px" height="250px">
 
         </div>
         <p>This is the information for package 3</p>

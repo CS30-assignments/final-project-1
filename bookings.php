@@ -4,8 +4,8 @@
 include('connect-db.php');
 
 
-// selection variables set to empty
-$room_type = $check_in = $check_out = $email_confirm =  '';
+// initialize all variables
+$room_type = $check_in = $check_out = $email_confirm = $fillIn = '';
 
 // errors
 $errors = array('check-in' => '', 'check-out' => '', 'room-type' => '', 'email-confirm' => '');
@@ -35,8 +35,10 @@ if (isset($_POST['submit-bookings'])) {
 
 
     // Check for errors
+    
     if (array_filter($errors)) {
         echo "WE have a problem";
+        $fillIn = "All fields must be filled in!";
     } else {
 
         // escapeString($check_in, $connect, 'check-in');
@@ -119,6 +121,7 @@ mysqli_close($connect);
     <?php ?>
     <!-- Things to include -->
     <h2>Booking Information</h2>
+    <p class="text-danger"> <?php echo $fillIn; ?></p>
 
     <!-- What to do-->
 
@@ -167,15 +170,17 @@ mysqli_close($connect);
         <div class="container p-5">
             <label>Choose a Room</label>
             <select name="room-type">
-                <option value="Room-1">Room-1</option>
-                <option value="Room-2">Room-2</option>
-                <option value="Room-3">Room-3</option>
-                <option value="Room-4">Room-4</option>
+                <option value="Room-1">Standard Room-1</option>
+                <option value="Room-2">Standard Room-2</option>
+                <option value="Package-1">Package-1</option>
+                <option value="Package-2">Package-2</option>
+                <option value="Package-3">Package-3</option>
             </select>
         </div>
 
         <div class="container p-5">
             Email Confirmation: <input type="text" name="email-confirm">
+            <p class="text-secondary">Careful! The booking will be saved to the email that you enter.</p>
         </div>
 
         <br>

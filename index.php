@@ -54,6 +54,7 @@ if (isset($_POST["log-in"])) {
     <title>Main Page</title>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -62,19 +63,20 @@ if (isset($_POST["log-in"])) {
     <h1 class="display-3">Name</h1>
 
     <!-- Navigation with phone, address, and sign up -->
-    <nav class="bg-light">
+    <nav class="p-3">
         <ul class="nav justify-content-end">
-            <li class="nav-item px-4">Phone Number: 780-938-9302</li>
-            <li class="nav-item px-4">Address: 1239 Unknown Street</li>
+            <li class="text-light nav-item px-4">Phone Number: 780-938-9302</li>
+            <li class="text-light nav-item px-4">Address: 1239 Unknown Street</li>
         </ul>
 
     </nav>
 
 
     <!-- Log In (if have account) -->
-    <div class="row">
-        <div class="p-5 col">
+
+    <div class="p-5 col d-flex justify-content-center">
             <div class="container bg-light py-4 w-25 float-left">
+
                 <!-- Log in Heading -->
                 <h3 class="display 4">Log In</h3>
 
@@ -105,13 +107,10 @@ if (isset($_POST["log-in"])) {
                 </p>
 
             </div>
-
         </div>
 
-        <div class="col">
-            <img src="images/" alt="">
-        </div>
     </div>
+
 
 
 </body>
