@@ -22,7 +22,6 @@ mysqli_close($connect);
 
 // Login Validation
 if (isset($_POST["log-in"])) {
-    echo "COMING FROM LOG In";
 
     // loop through user_information to check log in and password
     foreach ($user_information as $user) {

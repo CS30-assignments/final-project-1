@@ -2,6 +2,8 @@
 
 // call file with database connection
 include('connect-db.php');
+// call file with functions
+include('functions.php');
 
 // initialize variables
 $user_name = $user_email = $user_password = $errors = "";
@@ -44,32 +46,7 @@ if (isset($_POST['submit-sign-up'])) {
 
         // save to database and them re-direct
         if (mysqli_query($connect, $sql)) {
-            // write query for all user information
-            $sql = "SELECT id, names, email, passwords FROM user_information";
-
-            // make the query and get results
-            $result = mysqli_query($connect, $sql);
-
-            // fetch results as an array
-            $user_information = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-            // free result
-            mysqli_free_result($result);
-
-            // close connection
-            mysqli_close($connect);
-
-            // loop through user_information to check log in and password
-            foreach ($user_information as $user) {
-                if ($user_email == $user['email'] && $user_password == $user['passwords']) {
-                    // go to about page
-                    // start the session
-                    session_start();
-                    $_SESSION['name'] = $user['names'];
-                    $_SESSION['email'] = $user['email'];
-                    header('Location: about-us.php');
-                }
-            }
+            selectSql($connect, $user_information, $user, $user_email, $user_password);
         } else {
             echo "EEERRRRooorrr";
         }
