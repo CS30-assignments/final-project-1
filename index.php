@@ -3,7 +3,7 @@
 // call file with database connection
 include('connect-db.php');
 // initialize login variable
-$loginError = " ";
+$loginError = $errors = " ";
 
 // write query for all user information
 $sql = "SELECT id, names, email, passwords FROM user_information";
@@ -22,6 +22,8 @@ mysqli_close($connect);
 
 // Login Validation
 if (isset($_POST["log-in"])) {
+    echo "COMING FROM LOG In";
+
     // loop through user_information to check log in and password
     foreach ($user_information as $user) {
         if ($_POST['email'] == $user['email'] && $_POST['password'] == $user['passwords']) {
@@ -31,15 +33,15 @@ if (isset($_POST["log-in"])) {
             $_SESSION['name'] = $user['names'];
             $_SESSION['email'] = $user['email'];
 
+
+
             header('Location: about-us.php');
+        } elseif ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
+            // go to about page
+            $loginError =  "Sorry, incorrect login. Try again. Email and password are case sensitive.";
         }
     }
 
-    // If incorrect:
-    if ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
-        // go to about page
-        $loginError =  "Sorry, incorrect login. Try again. Email and password are case sensitive";
-    }
 }
 
 ?>
@@ -75,39 +77,38 @@ if (isset($_POST["log-in"])) {
     <!-- Log In (if have account) -->
 
     <div class="p-5 col d-flex justify-content-center">
-            <div class="container bg-light py-4 w-25 float-left">
+        <div class="container bg-light py-4 w-25 float-left">
 
-                <!-- Log in Heading -->
-                <h3 class="display 4">Log In</h3>
+            <!-- Log in Heading -->
+            <h3 class="display 4">Log In</h3>
 
-                <form method="post" class="pt-2">
-                    <label>Email:</label>
-                    <!-- Enter in value  -->
-                    <input type="text" name="email">
+            <form method="post" class="pt-2">
+                <label>Email:</label>
+                <!-- Enter in value  -->
+                <input type="text" name="email">
+                <br>
 
-                    <br>
+                <label>Password:</label>
+                <!-- Enter in value  -->
+                <input type="password" name="password">
 
-                    <label>Password:</label>
-                    <!-- Enter in value  -->
-                    <input type="password" name="password">
+                <!-- Submit Login -->
+                <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
 
-                    <!-- Submit Login -->
-                    <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
-
-                    <!-- Error in the Login -->
-                    <p class="pt-2 text-danger"><?php echo $loginError ?></p>
-                </form>
+                <!-- Error in the Login -->
+                <p class="pt-2 text-danger"><?php echo $loginError; ?></p>
+            </form>
 
 
-                <!-- Sign up -->
-                <p class="pt-3 text-info">
-                    Don't have a login?
-                    <br>
-                    <a class="nav-link" href="sign-up.php">Sign Up</a>
-                </p>
+            <!-- Sign up -->
+            <p class="pt-3 text-info">
+                Don't have a login?
+                <br>
+                <a class="nav-link" href="sign-up.php">Sign Up</a>
+            </p>
 
-            </div>
         </div>
+    </div>
 
     </div>
 

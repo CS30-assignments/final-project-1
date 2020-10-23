@@ -4,50 +4,75 @@
 include('connect-db.php');
 
 // initialize variables
-$user_name = $user_email = $user_password = "";
+$user_name = $user_email = $user_password = $errors = "";
 
 // Enter sign up info into database
 if (isset($_POST['submit-sign-up'])) {
 
     // Check name
     if (empty($_POST['name'])) {
-        echo "An name is required.";
+        $errors = "All fields must be entered in.";
     } else {
         $user_name = $_POST['name'];
     }
 
     // Check email
     if (empty($_POST['email'])) {
-        echo "An email is required.";
+        $errors = "All fields must be entered in.";
     } else {
         $user_email = $_POST['email'];
     }
 
     // Check password
     if (empty($_POST['password'])) {
-        echo "An name is required.";
+        $errors = "All fields must be entered in.";
     } else {
         $user_password = $_POST['password'];
     }
 
-    echo $user_name . $user_password . $user_email;
-
-    // Insert sign up info into database
-    // escape the string
-    $user_name = mysqli_real_escape_string($connect, $_POST['name']);
-    $user_email = mysqli_real_escape_string($connect, $_POST['email']);
-    $user_password = mysqli_real_escape_string($connect, $_POST['password']);
-
-    // create sql and insert
-    $sql = "INSERT INTO user_information(names, email, passwords) VALUES ('$user_name', '$user_email', '$user_password')";
-
-    // save to database and them re-direct
-    if (mysqli_query($connect, $sql)) {
-        session_start();
-        // $_SESSION['name'] = $_POST['name'];
-        header('Location: index.php');
+    if ($errors) {
+        echo "DO NOT SEND TO THE DATABASE";
     } else {
-        echo "EEERRRRooorrr";
+        // Insert sign up info into database
+        // escape the string
+        $user_name = mysqli_real_escape_string($connect, $_POST['name']);
+        $user_email = mysqli_real_escape_string($connect, $_POST['email']);
+        $user_password = mysqli_real_escape_string($connect, $_POST['password']);
+
+        // create sql and insert
+        $sql = "INSERT INTO user_information(names, email, passwords) VALUES ('$user_name', '$user_email', '$user_password')";
+
+        // save to database and them re-direct
+        if (mysqli_query($connect, $sql)) {
+            // write query for all user information
+            $sql = "SELECT id, names, email, passwords FROM user_information";
+
+            // make the query and get results
+            $result = mysqli_query($connect, $sql);
+
+            // fetch results as an array
+            $user_information = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            // free result
+            mysqli_free_result($result);
+
+            // close connection
+            mysqli_close($connect);
+
+            // loop through user_information to check log in and password
+            foreach ($user_information as $user) {
+                if ($user_email == $user['email'] && $user_password == $user['passwords']) {
+                    // go to about page
+                    // start the session
+                    session_start();
+                    $_SESSION['name'] = $user['names'];
+                    $_SESSION['email'] = $user['email'];
+                    header('Location: about-us.php');
+                }
+            }
+        } else {
+            echo "EEERRRRooorrr";
+        }
     }
 }
 
@@ -108,6 +133,7 @@ if (isset($_POST['submit-sign-up'])) {
                 <input type="submit" name="submit-sign-up">
             </p>
 
+            <p class="text-danger pb-1"><?php echo $errors; ?></p>
         </form>
     </div>
 

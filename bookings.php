@@ -160,6 +160,7 @@ mysqli_close($connect);
         <div class="container p-5">
             <label>Check In: </label>
             <input type="date" name="check-in">
+            <p><?php echo $errors['check-in']?></p>
 
             <label>Check Out: </label>
             <input type="date" name="check-out">
