@@ -40,7 +40,6 @@ if (isset($_POST["log-in"])) {
             $loginError =  "Sorry, incorrect login. Try again. Email and password are case sensitive.";
         }
     }
-
 }
 
 ?>
@@ -64,10 +63,14 @@ if (isset($_POST["log-in"])) {
     <h1 class="display-3">Name</h1>
 
     <!-- Navigation with phone, address, and sign up -->
-    <nav class="p-3">
+    <nav id="login-header" class="p-3">
         <ul class="nav justify-content-end">
             <li class="text-light nav-item px-4">Phone Number: 780-938-9302</li>
             <li class="text-light nav-item px-4">Address: 1239 Unknown Street</li>
+
+            <li class="nav-item  px-5">
+                <a class="nav-link text-white btn-secondary" href="admin.php">Admin</a>
+            </li>
         </ul>
 
     </nav>
@@ -92,7 +95,7 @@ if (isset($_POST["log-in"])) {
                 <input type="password" name="password">
 
                 <!-- Submit Login -->
-                <input class="btn bg-secondary" type="submit" name="log-in" value="Log In">
+                <input id="login-btn" class="btn" type="submit" name="log-in" value="Log In">
 
                 <!-- Error in the Login -->
                 <p class="pt-2 text-danger"><?php echo $loginError; ?></p>
@@ -100,11 +103,12 @@ if (isset($_POST["log-in"])) {
 
 
             <!-- Sign up -->
-            <p class="pt-3 text-info">
-                Don't have a login?
-                <br>
-                <a class="nav-link" href="sign-up.php">Sign Up</a>
-            </p>
+            <div>
+                <p class="text-secondary">Don't have a login?</p>
+                <a id="sign-up-link" class="nav-link" href="sign-up.php">Sign Up</a>
+            </div>
+
+
 
         </div>
     </div>

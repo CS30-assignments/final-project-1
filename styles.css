@@ -1,14 +1,38 @@
 /* Stylesheet */
 body{
-    background-color: rgba(187, 183, 183, 0.219);
+    background-color: rgba(241, 184, 146, 0.219);
 }
-.p-3{
-    background-color: rgba(77, 12, 77, 0.61);
+
+
+nav{
+    background-color: rgb(136, 30, 56);
+}
+
+#login-btn{
+    background-color: rgba(59, 16, 26, 0.233);
+}
+
+#sign-up-link{
+    color: rgb(71, 22, 25);
 }
 
 h1{
     font-family: 'Zilla Slab', serif;
 }
+
+a{
+    color: white;
+}
+
+hr{
+    width: 20px;
+}
+
+#hello-name{
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+}
+
 
 #customer-review{
     font-family: 'Handlee', cursive;
@@ -20,4 +44,26 @@ h1{
 hr{
     width: 500px;
     float: left;
+}
+
+#booking-info{
+    font-family: 'Zilla Slab', serif;
+    width: 500px;
+    padding-left: 50px;
+    font-size: 19px;
+}
+
+#booking-form{
+    background-color: #777a889d;
+    width: 600px;
+    float: left;
+}
+
+#booked{
+    border: 2px solid lightslategray;
+    background-color: rgb(196, 206, 216);
+}
+
+#delete-booking{
+    background-color: rgb(215, 218, 221);
 }

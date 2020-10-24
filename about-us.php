@@ -54,28 +54,27 @@
         <h1 class="p-2">Welcome to the NAME!</h1>
 
         <!-- Promo paragraph -->
-        <p id= "about-paragraph" class="p-2">
-            With over 10,000 hotels over the world, NAME has been a reliable, comfortable, and incredible experience for millions of people all over the world. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, the NAME is here to create a wonderful experience.
+        <p id="about-paragraph" class="p-2">
+            With over 10,000 hotels over the world, NAME has been a reliable, comfortable, and incredible experience for millions of people. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, the NAME is commited to create a wonderful and lasting experience for you.
         </p>
 
         <div class="container pb-5">
             <hr>
         </div>
-    <br>
+        <br>
+        <div>
+            <!-- Customer Reviews -->
+            <p id="customer-review">
+                "Wow! I'm blown away by the care and kindess that NAME treats us with. Our favourtie hotel to stay at!"
+                - Claire
+            </p>
 
-        <!-- Customer Reviews -->
-        <p id="customer-review">
-            Claire:
-            "Wow! I'm blown away by the care and kindess that NAME treats us with. Our favourtie hotel to stay at!"
-        </p>
+        </div>
 
 
-    </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 </body>

@@ -16,6 +16,7 @@ if (isset($_POST["log-out"])) {
 <head>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -24,7 +25,7 @@ if (isset($_POST["log-out"])) {
     <h1 class="display-3">Name</h1>
 
     <!-- Navigation Bar (to display different sections) -->
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm">
 
         <!-- Items in the bar -->
         <ul class="navbar-nav">
@@ -48,11 +49,15 @@ if (isset($_POST["log-out"])) {
                 <a class="nav-link" href="explore.php">Explore</a>
             </li>
 
-            <li class="text-success p-2">Hello <?php echo htmlspecialchars($name) ?></li>
+            <div id="name-logout" class="row">
+                <li id="hello-name" class="text-white p-2 col">Hello <?php echo htmlspecialchars($name) ?></li>
 
-            <form action="index.php" method="POST" class="px-3">
-                <input class="btn btn-warning" type="submit" name="log-out" value="Log Out">
-            </form>
+                <form action="index.php" method="POST" class="px-3">
+                    <input class="btn btn-warning col" type="submit" name="log-out" value="Log Out">
+                </form>
+            </div>
+
+
 
         </ul>
 
