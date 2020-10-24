@@ -6,3 +6,18 @@ body{
     background-color: rgba(77, 12, 77, 0.61);
 }
 
+h1{
+    font-family: 'Zilla Slab', serif;
+}
+
+#customer-review{
+    font-family: 'Handlee', cursive;
+    float: left;
+    width: 500px;
+    padding-left: 25px;
+}
+
+hr{
+    width: 500px;
+    float: left;
+}

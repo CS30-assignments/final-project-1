@@ -11,8 +11,6 @@ if (isset($_POST["log-out"])) {
     $email = $_SESSION['email'];
 }
 
-echo $_SESSION['name'];
-
 ?>
 
 <head>

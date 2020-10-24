@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zilla+Slab:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -26,13 +27,13 @@
         </ol>
         <div class="carousel-inner pt-2">
             <div class="carousel-item active">
-                <img class="responsive" src="images/lounge-1.jpg" alt="First slide" width="750px" height="700px">
+                <img class="responsive" src="images/hotel.jpg" alt="First slide" width="750px" height="570px">
             </div>
             <div class="carousel-item">
-                <img class="responsive" src="images/room-3.jpg" alt="Second slide" width="730px" height="700px">
+                <img class="responsive" src="images/room-3.jpg" alt="Second slide" width="730px" height="570px">
             </div>
             <div class="carousel-item">
-                <img class="responsive" src="images/food-2.jpg" alt="Third slide" width="750px" height="700px">
+                <img class="responsive" src="images/food-2.jpg" alt="Third slide" width="750px" height="570px">
             </div>
         </div>
 
@@ -46,16 +47,29 @@
         </a>
     </div>
 
-    
+
 
     <div>
-        <h1>About us information</h1>
-        <ol>
-            <li>images</li>
-            <li>motto/vision/words/mission ??</li>
-            <li>carousel</li>
-            <li>reviews</li>
-        </ol>
+        <!-- Main Heading -->
+        <h1 class="p-2">Welcome to the NAME!</h1>
+
+        <!-- Promo paragraph -->
+        <p id= "about-paragraph" class="p-2">
+            With over 10,000 hotels over the world, NAME has been a reliable, comfortable, and incredible experience for millions of people all over the world. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, the NAME is here to create a wonderful experience.
+        </p>
+
+        <div class="container pb-5">
+            <hr>
+        </div>
+    <br>
+
+        <!-- Customer Reviews -->
+        <p id="customer-review">
+            Claire:
+            "Wow! I'm blown away by the care and kindess that NAME treats us with. Our favourtie hotel to stay at!"
+        </p>
+
+
     </div>
 
 

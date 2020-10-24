@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 // Suggestion
 // initialize variable
 $thankYou = "";
-if(isset($_POST['suggest'])){
+if (isset($_POST['suggest'])) {
     $thankYou = "Thank You, we hope you enjoyed your stay!";
 }
 
@@ -11,6 +11,7 @@ if(isset($_POST['suggest'])){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,37 +20,46 @@ if(isset($_POST['suggest'])){
 
 <body>
     <!-- Header -->
-    <?php include('header.php')?>
+    <?php include('header.php') ?>
 
-    <!-- Info about Contact Us -->
-    <h2>Contact Us:</h2>
+    <div class="container pt-5">
 
-    <!-- Description -->
-    <p class="container text-dark">Have a question? A concern? Are you lost?</p>
-    <p class="container text-dark">
-        Don't hesitate to reach out to us thorugh our email, phone or social medias to 
-        assist you in having the best stay at NAME OF HOTEL!
-    </p>
+        <!-- Info about Contact Us -->
+        <h2>Contact Us:</h2>
 
-    <!-- Contact Information -->
-    <h4 class="container pt-5">Contact Information: </h4>
-    <div class="container row">
-        <!-- Phone Number -->
-        <div class= "col">
-        <p class="bg-light p-4">Phone Number: 780-303-3692</p>
-        </div>
-
-        <!-- Address -->
-        <div class= "col">
-        <p class="bg-light p-4">Address: 1234 Blank Street</p>
-        </div>
-
-        <!-- Address -->
-        <div class= "col">
-        <p class="bg-light p-4">Email: name@example.com</p>
-        </div>
+        <!-- Description -->
+        <p class="container text-dark">Have a question? A concern? Are you lost?</p>
+        <p class="container text-dark">
+            Don't hesitate to reach out to us thorugh our email, phone or social medias to
+            assist you in having the best stay at NAME OF HOTEL!
+        </p>
 
     </div>
+
+
+
+    <!-- Contact Information -->
+    <div class="container">
+        <h4 class="container pt-5">Contact Information: </h4>
+        <div class="container row">
+            <!-- Phone Number -->
+            <div class="col">
+                <p class="bg-light p-4">Phone Number: 780-303-3692</p>
+            </div>
+
+            <!-- Address -->
+            <div class="col">
+                <p class="bg-light p-4">Address: 1234 Blank Street</p>
+            </div>
+
+            <!-- Address -->
+            <div class="col">
+                <p class="bg-light p-4">Email: name@example.com</p>
+            </div>
+
+        </div>
+    </div>
+
 
     <!-- Social Media "links" -->
     <div class="container pt-3">
@@ -71,8 +81,9 @@ if(isset($_POST['suggest'])){
 
     <!-- Thank You for staying with us -->
     <div class="container">
-        <p class="text-success"><?php echo $thankYou;?></p>
+        <p class="text-success"><?php echo $thankYou; ?></p>
     </div>
 
 </body>
+
 </html>
