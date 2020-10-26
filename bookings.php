@@ -4,64 +4,68 @@
 include('connect-db.php');
 
 
-// initialize all variables
-$room_type = $check_in = $check_out = $email_confirm = $fillIn = '';
-
-// errors
-$errors = array('check-in' => '', 'check-out' => '', 'room-type' => '', 'email-confirm' => '');
-
-// Take submitted informtation and put in selections
-if (isset($_POST['submit-bookings'])) {
-    // Check if check-in is empty
-    if (empty($_POST['check-in'])) {
-        $errors['check-in'] = 'An check in date is required <br />';
-    } else {
-        $check_in = $_POST['check-in'];
-    }
-
-    // Check if check-out is empty
-    if (empty($_POST['check-out'])) {
-        $errors['check-out'] = 'An check out date is required <br />';
-    } else {
-        $check_out = $_POST['check-out'];
-    }
-
-    // Check if email confirmation is empty
-    if (empty($_POST['email-confirm'])) {
-        $errors['email-confirm'] = 'An email is required <br />';
-    } else {
-        $email_confirm = $_POST['email-confirm'];
-    }
 
 
-    // Check for errors
+// // initialize all variables
+// $room_type = $check_in = $check_out = $email_confirm = $fillIn = '';
 
-    if (array_filter($errors)) {
-        echo "WE have a problem";
-        $fillIn = "All fields must be filled in!";
-    } else {
+// // errors
+// $errors = array('check-in' => '', 'check-out' => '', 'room-type' => '', 'email-confirm' => '');
 
-        // escapeString($check_in, $connect, 'check-in');
-        // escapeString($check_out, $connect, 'check-out');
-        // escapeString($room_type, $connect, 'room-type');
-        // escapeString($email_confirm, $connect, 'email-confirm');
+// // Take submitted informtation and put in selections
+// if (isset($_POST['submit-bookings'])) {
+//     // Check if check-in is empty
+//     if (empty($_POST['check-in'])) {
+//         $errors['check-in'] = 'An check in date is required <br />';
+//     } else {
+//         $check_in = $_POST['check-in'];
+//     }
 
-        $check_in = mysqli_real_escape_string($connect, $_POST['check-in']);
-        $check_out = mysqli_real_escape_string($connect, $_POST['check-out']);
-        $room_type = mysqli_real_escape_string($connect, $_POST['room-type']);
-        $email_confirm = mysqli_real_escape_string($connect, $_POST['email-confirm']);
+//     // Check if check-out is empty
+//     if (empty($_POST['check-out'])) {
+//         $errors['check-out'] = 'An check out date is required <br />';
+//     } else {
+//         $check_out = $_POST['check-out'];
+//     }
 
-        // create sql
-        $sql = "INSERT INTO bookings_information(email_confirm, check_in, check_out, room_type) VALUES ('$email_confirm', '$check_in','$check_out','$room_type')";
+//     // Check if email confirmation is empty
+//     if (empty($_POST['email-confirm'])) {
+//         $errors['email-confirm'] = 'An email is required <br />';
+//     } else {
+//         $email_confirm = $_POST['email-confirm'];
+//     }
 
-        // save to database and then check
-        if (mysqli_query($connect, $sql)) {
-            header('Location: bookings.php');
-        } else {
-            echo 'query errrrooorr';
-        }
-    }
-}
+
+//     // Check for errors
+
+//     if (array_filter($errors)) {
+//         echo "WE have a problem";
+//         $fillIn = "All fields must be filled in!";
+//     } else {
+
+//         // escapeString($check_in, $connect, 'check-in');
+//         // escapeString($check_out, $connect, 'check-out');
+//         // escapeString($room_type, $connect, 'room-type');
+//         // escapeString($email_confirm, $connect, 'email-confirm');
+
+//         $check_in = mysqli_real_escape_string($connect, $_POST['check-in']);
+//         $check_out = mysqli_real_escape_string($connect, $_POST['check-out']);
+//         $room_type = mysqli_real_escape_string($connect, $_POST['room-type']);
+//         $email_confirm = mysqli_real_escape_string($connect, $_POST['email-confirm']);
+
+//         // create sql
+//         $sql = "INSERT INTO bookings_information(email_confirm, check_in, check_out, room_type) VALUES ('$email_confirm', '$check_in','$check_out','$room_type')";
+
+//         // save to database and then check
+//         if (mysqli_query($connect, $sql)) {
+//             header('Location: bookings.php');
+//         } else {
+//             echo 'query errrrooorr';
+//         }
+//     }
+// }
+
+
 
 // Delete booking from user
 if (isset($_POST['delete-booking'])) {
@@ -129,13 +133,16 @@ mysqli_close($connect);
     </div>
     <p class=" container text-danger"> <?php echo $fillIn; ?></p>
 
+
+
+
     <!-- What to do-->
 
     <!-- Selection -->
     <div class="container">
-        <div class="container  float-right w-25">
+        <div class="container float-right w-25">
             <h3>Booked:</h3>
-            <div class="">
+            <div>
                 <?php foreach ($userBook as $book) { ?>
                     <?php if ($email == $book['email_confirm']) { ?>
                         <div id="booked" class="container">

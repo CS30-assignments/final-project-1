@@ -54,16 +54,28 @@ hr{
 }
 
 #booking-form{
-    background-color: #777a889d;
+    background-color: #50343933;
     width: 600px;
     float: left;
 }
 
 #booked{
-    border: 2px solid lightslategray;
-    background-color: rgb(196, 206, 216);
+    border: 2px solid  #2e242633;
+    background-color: #856b6f33;
+    width: 200px;
+    text-align: center;
 }
 
 #delete-booking{
     background-color: rgb(215, 218, 221);
+}
+
+.admin-user-info{
+    border: 2px solid grey;
+    width: 200px;
+}
+
+.admin-user-border{
+    padding: 10px;
+
 }

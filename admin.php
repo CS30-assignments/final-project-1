@@ -6,7 +6,7 @@ include('connect-db.php');
 if(isset($_POST['admin'])){
 
     // Log in with specific admin info
-    if($_POST['admin-email'] == 'navika@example.com' && $_POST['admin-pin'] == 'admin-navika'){
+    if($_POST['admin-email'] == 'navika@admin.com' && $_POST['admin-pin'] == '27878'){
         header('Location: view-users.php');
     }
 
@@ -40,7 +40,7 @@ if(isset($_POST['admin'])){
                 <input type="text" name="admin-email">
                 <br>
 
-                <label class="p-2">Pin #:</label>
+                <label class="p-2">Pin # :</label>
                 <!-- Enter in value  -->
                 <input type="password" name="admin-pin">
 
