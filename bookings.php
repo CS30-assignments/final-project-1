@@ -3,6 +3,13 @@
 // call file with database connection
 include('connect-db.php');
 
+// call file with functions
+include('functions.php');
+
+if (isset($_POST['submit-bookings'])) {
+    bookGuest($_POST['check-in'], $_POST['check-out'], $_POST['email-confirm'], $_POST['room-type'], $connect);
+}
+
 
 
 
