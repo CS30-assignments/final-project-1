@@ -51,25 +51,30 @@
 
     <div>
         <!-- Main Heading -->
-        <h1 class="p-2">Welcome to the NAME!</h1>
+        <h1 class="p-2">Welcome to Mungara Suites!</h1>
 
         <!-- Promo paragraph -->
         <p id="about-paragraph" class="p-2">
-            With over 10,000 hotels over the world, NAME has been a reliable, comfortable, and incredible experience for millions of people. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, the NAME is commited to create a wonderful and lasting experience for you.
+            With over 10,000 hotels over the world, Mungara Suites has been a reliable, comfortable, and incredible experience for millions of people. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, the NAME is commited to create a wonderful and lasting experience for you.
         </p>
 
         <div class="container pb-5">
             <hr>
         </div>
         <br>
-        <div>
+        <!-- <div> -->
             <!-- Customer Reviews -->
             <p id="customer-review">
-                "Wow! I'm blown away by the care and kindess that NAME treats us with. Our favourtie hotel to stay at!"
+                "Wow! I'm blown away by the care and kindess that Mungara Suites treats us with. Our favourtie hotel to stay at!"
                 - Claire
             </p>
 
-        </div>
+            
+            <p id="customer-review-2">
+                "Incredible! I always find an excuse to stay at Mungara Suites!" <br>
+                - Johnathan
+            </p>
+        <!-- </div> -->
 
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

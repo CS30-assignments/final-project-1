@@ -1,4 +1,17 @@
-<?php ?>
+<?php 
+
+// call file with database connection
+include('connect-db.php');
+
+// call file with functions
+include('functions.php');
+
+
+if(isset($_POST['submit-guest-booking'])){
+    bookGuest($_POST['check-in'], $_POST['check-out'], $_POST['email-confirm'], $_POST['room-type'], $fillIn, $connect);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +39,12 @@
                 <a class="nav-link" href="guest-bookings.php">Guest Bookings</a>
             </li>
 
+            <li class="nav-item px-5">
+                <a class = "nav-link" href="index.php">Back to Home</a>
+            </li>
         </ul>
+
+        
     </nav>
 
     <!-- Book a Guest -->
@@ -63,7 +81,7 @@
 
             <br>
             <div>
-                <input type="submit" class="btn btn-success" name="submit-bookings" value="Submit">
+                <input type="submit" class="btn btn-success" name="submit-guest-booking" value="Submit">
             </div>
 
         </form>

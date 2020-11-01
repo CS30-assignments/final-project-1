@@ -3,11 +3,16 @@
 // call file with database connection
 include('connect-db.php');
 
+// login error
+$loginError = ' ';
+
 if(isset($_POST['admin'])){
 
     // Log in with specific admin info
     if($_POST['admin-email'] == 'navika@admin.com' && $_POST['admin-pin'] == '27878'){
         header('Location: view-users.php');
+    } else{
+        $loginError = "Incorrect Login, please try again.";
     }
 
 }

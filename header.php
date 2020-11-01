@@ -45,16 +45,18 @@ if (isset($_POST["log-out"])) {
                 <a class="nav-link" href="contact-us.php">Contact Us</a>
             </li>
 
-            <li class="nav-item  px-5">
-                <a class="nav-link" href="explore.php">Explore</a>
-            </li>
 
-            <div id="name-logout" class="row">
-                <li id="hello-name" class="text-white p-2 col">Hello <?php echo htmlspecialchars($name) ?></li>
 
-                <form action="index.php" method="POST" class="px-3">
-                    <input class="btn btn-warning col" type="submit" name="log-out" value="Log Out">
-                </form>
+            <div id="name-logout" class="">
+                <ul class="navbar-nav">
+                    <li class="text-white nav-item px-5">780-0544-0402</li>
+                    <li id="hello-name" class="text-white nav-item">Hello <?php echo htmlspecialchars($name) ?></li>
+
+                    <form action="index.php" method="POST" class="px-3">
+                        <input class="btn btn-warning nav-item" type="submit" name="log-out" value="Log Out">
+                    </form>
+                </ul>
+
             </div>
 
 

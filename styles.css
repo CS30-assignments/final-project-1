@@ -28,6 +28,10 @@ hr{
     width: 20px;
 }
 
+/* #name-logout{
+    padding-top: 10px;
+} */
+
 #hello-name{
     font-family: 'Satisfy', cursive;
     font-size: 20px;
@@ -39,6 +43,13 @@ hr{
     float: left;
     width: 500px;
     padding-left: 25px;
+    padding-bottom: 50px;
+}
+#customer-review-2{
+    font-family: 'Handlee', cursive;
+    float: right;
+    width: 500px;
+    padding-left: 50px;
 }
 
 hr{
@@ -78,4 +89,8 @@ hr{
 .admin-user-border{
     padding: 10px;
 
+}
+
+.each-booking{
+    padding: 10px;
 }

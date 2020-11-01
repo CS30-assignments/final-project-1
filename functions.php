@@ -40,20 +40,9 @@ function selectSql($db, $fetchResults, $value, $postEmail, $postPassword){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-function bookGuest($in, $out, $e_confirm, $room,$db){
+function bookGuest($in, $out, $e_confirm, $room, $errorMsg, $db){
     // initialize all variables
-    $room_type = $check_in = $check_out = $email_confirm = '';
+    $room_type = $check_in = $check_out = $email_confirm = $errorMsg = ' ';
     
     // errors
     $errors = array('check-in' => '', 'check-out' => '', 'room-type' => '', 'email-confirm' => '');
@@ -85,8 +74,9 @@ function bookGuest($in, $out, $e_confirm, $room,$db){
         // Check for errors
     
         if (array_filter($errors)) {
-            echo "WE have a problem";
-            // $fillIn = "All fields must be filled in!";
+            // echo "WE have a problem";
+            $errorMsg = "All fields must be filled in!";
+            echo  $errorMsg;
         } else {
     
             // escapeString($check_in, $connect, 'check-in');
@@ -104,7 +94,7 @@ function bookGuest($in, $out, $e_confirm, $room,$db){
     
             // save to database and then check
             if (mysqli_query($db, $sql)) {
-                header('Location: bookings.php');
+                // header('Location: bookings.php');
                 echo "WOOOOOWWWW IT WORKS";
             } else {
                 echo 'query errrrooorr';

@@ -18,14 +18,13 @@
     <!-- Package 1 -->
     <div class="p-5">
         <h3 class="w-25 text-dark">Package 1</h3>
-        <p>Image for package 1</p>
         <div>
             <img src="images/package-1/room.jpg" alt="package-room" width="280px" height="250px">
             <img src="images/package-1/view.jpg" alt="package-view" width="280px" height="250px">
             <img src="images/package-1/movie.jpg" alt="package-movie" width="280px" height="250px">
             <img src="images/package-1/service.webp" alt="package-service" width="280px" height="250px">
         </div>
-        <p>This is the information for package 1</p>
+        <p>Get ready for an calm, emjoying stay at Mungara Suites with Package 1. With unilimited access to the movie theater, you can relax to your favourite movies right after your wonderful dinner at out reserved outdoor dining. Our feather filled matteresses will provide the most comforted sleep with complementary breakfast delivierd straight to your room at your prefered time. </p>
     </div>
 
     <!-- Package 2 -->
@@ -38,7 +37,7 @@
             <img src="images/package-2/spa.jpg" alt="package2-spa" width="280px" height="250px">
             <img src="images/package-2/rest-of-room.jpg" alt="package2-room-rest" width="280px" height="250px">
         </div>
-        <p>This is the information for package 2</p>
+        <p>Package 2 allows you to enjoy a longer stay in a spacious room with a beautiful view. It also includes access to our movies theater whenever you like and a pool and spa which will leave you feeling rejuvinated and relaxed. </p>
     </div>
 
     <!-- Package 3 -->
@@ -52,7 +51,7 @@
             <img src="images/package-3/movies.jpg" alt="package3-movies" width="275px" height="250px">
 
         </div>
-        <p>This is the information for package 3</p>
+        <p>Package 3 includes some of the largest suites in out hotel, with premium bedding and around the clock room service. After a inclredible, exclusive, roof top dinner, you can take a night swim in our reserved pool, or watch a movie in our spacious movies theater. </p>
     </div>
 
     <!-- Info about premium packages-->

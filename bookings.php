@@ -6,8 +6,11 @@ include('connect-db.php');
 // call file with functions
 include('functions.php');
 
+// Fill in all fields
+$fillIn = ' ';
+
 if (isset($_POST['submit-bookings'])) {
-    bookGuest($_POST['check-in'], $_POST['check-out'], $_POST['email-confirm'], $_POST['room-type'], $connect);
+    bookGuest($_POST['check-in'], $_POST['check-out'], $_POST['email-confirm'], $_POST['room-type'], $fillIn, $connect);
 }
 
 
@@ -138,7 +141,7 @@ mysqli_close($connect);
         <h1 class="p-2">Book a Room!</h1>
         <p id="booking-info">Book a room with us in one of our standard, comfortable guest rooms or check out our premium packages to elevate your stay!</p>
     </div>
-    <p class=" container text-danger"> <?php echo $fillIn; ?></p>
+    <p class= "container text-danger"> <?php echo $fillIn; ?></p>
 
 
 

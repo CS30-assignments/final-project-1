@@ -61,6 +61,9 @@ mysqli_close($connect);
                 <a class="nav-link" href="guest-bookings.php">Guest Bookings</a>
             </li>
 
+            <li class="nav-item px-5">
+                <a class = "nav-link" href="index.php">Back to Home</a>
+            </li>
         </ul>
     </nav>
 
@@ -70,17 +73,23 @@ mysqli_close($connect);
         <?php foreach ($user_information as $user) { ?>
             <div class="admin-user-border">
                 <div class="admin-user-info">
-                    <?php
+                    <?php echo $user['names'] . ':' . '</br>'; ?>
+                    <?php foreach ($userBook as $book) { ?>
 
-                    echo $user['names'] . ':' . '</br>';
-                    foreach ($userBook as $book) {
-                        if ($user['email'] == $book['email_confirm']) {
-                            echo 'Check In: ' . $book['check_in'] . '</br>';
-                            echo 'Check Out: ' . $book['check_out'] . '</br>';
-                            echo 'Room Type: ' . $book['room_type'] . '</br>';
-                        }
-                    }
-                    ?>
+                        <?php if ($user['email'] == $book['email_confirm']) { ?>
+                            <div class="each-booking">
+
+                                <?php
+                                echo 'Check In: ' . $book['check_in'] . '</br>';
+                                echo 'Check Out: ' . $book['check_out'] . '</br>';
+                                echo 'Room Type: ' . $book['room_type'] . '</br>';
+                                ?>
+                            </div>
+
+                        <?php } ?>
+
+                    <?php } ?>
+
                 </div>
             </div>
 
