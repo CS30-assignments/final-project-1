@@ -31,7 +31,7 @@ if (isset($_POST['suggest'])) {
         <p class="container text-dark">Have a question? A concern? Are you lost?</p>
         <p class="container text-dark">
             Don't hesitate to reach out to us thorugh our email, phone or social medias to
-            assist you in having the best stay at NAME OF HOTEL!
+            assist you in having the best stay at Mungara Suites!
         </p>
 
     </div>
@@ -49,12 +49,12 @@ if (isset($_POST['suggest'])) {
 
             <!-- Address -->
             <div class="col">
-                <p class="bg-light p-4">Address: 1234 Blank Street</p>
+                <p class="bg-light p-4">Address: 1234 Patterson Street</p>
             </div>
 
             <!-- Address -->
             <div class="col">
-                <p class="bg-light p-4">Email: name@example.com</p>
+                <p class="bg-light p-4">Email: mugara@suites.com</p>
             </div>
 
         </div>

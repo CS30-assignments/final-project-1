@@ -48,7 +48,7 @@ mysqli_close($connect);
 
 <body>
     <!-- Main Heading  -->
-    <h1 class="display-3">Name</h1>
+    <h1 class="display-3">Mungara Suites</h1>
 
     <!-- Navigation bar for users names and bookings -->
     <nav class="navbar navbar-expand-sm">

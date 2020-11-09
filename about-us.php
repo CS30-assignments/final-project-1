@@ -55,7 +55,7 @@
 
         <!-- Promo paragraph -->
         <p id="about-paragraph" class="p-2">
-            With over 10,000 hotels over the world, Mungara Suites has been a reliable, comfortable, and incredible experience for millions of people. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, the NAME is commited to create a wonderful and lasting experience for you.
+            With over 10,000 hotels over the world, Mungara Suites has been a reliable, comfortable, and incredible experience for millions of people. Whether you are taking a vacation, stopping for a roadtrip, or travelling for buisness, Mungara Suites is commited to create a wonderful and lasting experience for you.
         </p>
 
         <div class="container pb-5">

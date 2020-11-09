@@ -32,8 +32,6 @@ if (isset($_POST["log-in"])) {
             $_SESSION['name'] = $user['names'];
             $_SESSION['email'] = $user['email'];
 
-
-
             header('Location: about-us.php');
         } elseif ($_POST['email'] != $user['email'] || $_POST['password'] != $user['passwords']) {
             // go to about page
@@ -54,19 +52,20 @@ if (isset($_POST["log-in"])) {
     <title>Main Page</title>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Include Header -->
     <!-- Main Heading  -->
-    <h1 class="display-3">Name</h1>
+    <h1 class="display-3">Mungara Suites</h1>
 
     <!-- Navigation with phone, address, and sign up -->
     <nav id="login-header" class="p-3">
         <ul class="nav justify-content-end">
             <li class="text-light nav-item px-4">Phone Number: 780-938-9302</li>
-            <li class="text-light nav-item px-4">Address: 1239 Unknown Street</li>
+            <li class="text-light nav-item px-4">Address: 1239 Patterson Street</li>
 
             <li class="nav-item  px-5">
                 <a class="nav-link text-white btn-secondary" href="admin.php">Admin</a>

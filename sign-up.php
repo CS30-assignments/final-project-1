@@ -48,7 +48,7 @@ if (isset($_POST['submit-sign-up'])) {
         if (mysqli_query($connect, $sql)) {
             selectSql($connect, $user_information, $user, $user_email, $user_password);
         } else {
-            echo "EEERRRRooorrr";
+            echo "query error: " . mysqli_error($connect);
         }
     }
 }
@@ -71,13 +71,13 @@ if (isset($_POST['submit-sign-up'])) {
 <body>
     <!-- Include Header -->
     <!-- Main Heading  -->
-    <h1 class="display-3">Name</h1>
+    <h1 class="display-3">Mungara Suites</h1>
 
     <!-- Navigation with phone, address, and sign up -->
     <nav class="p-3">
         <ul class="nav justify-content-end">
             <li class="text-light nav-item px-4">Phone Number: 780-938-9302</li>
-            <li class="text-light nav-item px-4">Address: 1239 Unknown Street</li>
+            <li class="text-light nav-item px-4">Address: 1239 Patterson Street</li>
         </ul>
 
     </nav>

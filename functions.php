@@ -95,7 +95,6 @@ function bookGuest($in, $out, $e_confirm, $room, $errorMsg, $db){
             // save to database and then check
             if (mysqli_query($db, $sql)) {
                 // header('Location: bookings.php');
-                echo "WOOOOOWWWW IT WORKS";
             } else {
                 echo 'query errrrooorr';
             }

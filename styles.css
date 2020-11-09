@@ -1,11 +1,12 @@
 /* Stylesheet */
 body{
-    background-color: rgba(241, 184, 146, 0.219);
+    background-color: rgba(199, 214, 231, 0.596);
+    
 }
 
 
 nav{
-    background-color: rgb(136, 30, 56);
+    background-color: rgb(6, 5, 70);
 }
 
 #login-btn{
@@ -15,6 +16,7 @@ nav{
 #sign-up-link{
     color: rgb(71, 22, 25);
 }
+
 
 h1{
     font-family: 'Zilla Slab', serif;

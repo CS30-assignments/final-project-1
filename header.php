@@ -22,7 +22,7 @@ if (isset($_POST["log-out"])) {
 
 <body>
     <!-- Main Heading  -->
-    <h1 class="display-3">Name</h1>
+    <h1 class="display-4">Mungara Suites</h1>
 
     <!-- Navigation Bar (to display different sections) -->
     <nav class="navbar navbar-expand-sm">
