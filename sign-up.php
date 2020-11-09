@@ -33,7 +33,7 @@ if (isset($_POST['submit-sign-up'])) {
     }
 
     if ($errors) {
-        echo "DO NOT SEND TO THE DATABASE";
+        // echo "Error";
     } else {
         // Insert sign up info into database
         // escape the string

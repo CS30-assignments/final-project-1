@@ -6,7 +6,7 @@ include('connect-db.php');
 // call file with functions
 include('functions.php');
 
-
+$fillIn = ' ';
 if(isset($_POST['submit-guest-booking'])){
     bookGuest($_POST['check-in'], $_POST['check-out'], $_POST['email-confirm'], $_POST['room-type'], $fillIn, $connect);
 }
@@ -40,7 +40,7 @@ if(isset($_POST['submit-guest-booking'])){
             </li>
 
             <li class="nav-item px-5">
-                <a class = "nav-link" href="index.php">Back to Home</a>
+                <a class = "nav-link" href="index.php">Back to Login</a>
             </li>
         </ul>
 

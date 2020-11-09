@@ -24,7 +24,7 @@
             <img src="images/package-1/movie.jpg" alt="package-movie" width="280px" height="250px">
             <img src="images/package-1/service.webp" alt="package-service" width="280px" height="250px">
         </div>
-        <p>Get ready for an calm, emjoying stay at Mungara Suites with Package 1. With unilimited access to the movie theater, you can relax to your favourite movies right after your wonderful dinner at out reserved outdoor dining. Our feather filled matteresses will provide the most comforted sleep with complementary breakfast delivierd straight to your room at your prefered time. </p>
+        <p>Get ready for an calm, enjoying stay at Mungara Suites with Package 1. With unilimited access to the movie theater, you can relax to your favourite movies right after your wonderful dinner at out reserved outdoor dining. Our feather filled mattresses will provide the most comforted sleep with complementary breakfast delivierd straight to your room at your preferred time. </p>
     </div>
 
     <!-- Package 2 -->
@@ -49,7 +49,7 @@
             <img src="images/package-3/movies.jpg" alt="package3-movies" width="275px" height="250px">
 
         </div>
-        <p>Package 3 includes some of the largest suites in out hotel, with premium bedding and around the clock room service. After a inclredible, exclusive, roof top dinner, you can take a night swim in our reserved pool, or watch a movie in our spacious movies theater. </p>
+        <p>Package 3 includes some of the largest suites in out hotel, with premium bedding and around the clock room service. After an incredible, exclusive, roof top dinner, you can take a night swim in our reserved pool, or watch a movie in our many spacious movie theaters. </p>
     </div>
 
     <!-- Info about premium packages-->

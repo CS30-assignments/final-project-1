@@ -30,7 +30,7 @@ if (isset($_POST['suggest'])) {
         <!-- Description -->
         <p class="container text-dark">Have a question? A concern? Are you lost?</p>
         <p class="container text-dark">
-            Don't hesitate to reach out to us thorugh our email, phone or social medias to
+            Don't hesitate to reach out to us through our email, phone or social medias to
             assist you in having the best stay at Mungara Suites!
         </p>
 

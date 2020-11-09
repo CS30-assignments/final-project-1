@@ -62,7 +62,7 @@ mysqli_close($connect);
             </li>
 
             <li class="nav-item px-5">
-                <a class = "nav-link" href="index.php">Back to Home</a>
+                <a class = "nav-link" href="index.php">Back to Login</a>
             </li>
         </ul>
     </nav>
