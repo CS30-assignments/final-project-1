@@ -1,10 +1,15 @@
 <?php
 
+// call file with database connection
+include('connect-db.php');
+
 // Suggestion
 // initialize variable
 $thankYou = "";
 if (isset($_POST['suggest'])) {
+
     $thankYou = "Thank You, we hope you enjoyed your stay!";
+
 }
 
 ?>

@@ -30,9 +30,7 @@ hr{
     width: 20px;
 }
 
-/* #name-logout{
-    padding-top: 10px;
-} */
+
 
 #hello-name{
     font-family: 'Satisfy', cursive;
@@ -95,4 +93,8 @@ hr{
 
 .each-booking{
     padding: 10px;
+}
+
+#admin-login{
+    background-color: #97a6ce;
 }

@@ -7,7 +7,6 @@ include('connect-db.php');
 $loginError = ' ';
 
 if(isset($_POST['admin'])){
-
     // Log in with specific admin info
     if($_POST['admin-email'] == 'navika@admin.com' && $_POST['admin-pin'] == '27878'){
         header('Location: view-users.php');
@@ -34,7 +33,7 @@ if(isset($_POST['admin'])){
 <body>
     <!-- Include Header -->
     <div class="p-5 col d-flex justify-content-center">
-        <div class="container bg-light py-4 w-25 float-left">
+        <div class="container bg-light py-4 w-50 float-left">
 
             <!-- Log in Heading -->
             <h3 class="display 4">Administration</h3>
@@ -49,8 +48,10 @@ if(isset($_POST['admin'])){
                 <!-- Enter in value  -->
                 <input type="password" name="admin-pin">
 
+                <br>
+
                 <!-- Submit Login -->
-                <input class="btn bg-info" type="submit" name="admin" value="Log In">
+                <input id="admin-login"  class="btn" type="submit" name="admin" value="Log In">
 
                 <!-- Error in the Login -->
                 <p class="pt-2 text-danger"><?php echo $loginError; ?></p>
